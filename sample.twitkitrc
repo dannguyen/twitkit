@@ -1,0 +1,16 @@
+[
+        {
+          "consumer_key": "some_consumer_key",
+          "consumer_secret": "theconsumerSecret",
+          "access_token": "999999-accesstoken",
+          "access_token_secret": "asdfsecrettoken"
+        },
+        {
+          "username": "notdefaultuser"
+          "consumer_key": "anotherkey",
+          "consumer_secret": "anothersecret",
+          "access_token": "999999-accesstoken",
+          "access_token_secret": "asdfsecrettoken"
+        },
+
+]
