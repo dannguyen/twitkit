@@ -1,16 +1,22 @@
 [
         {
-          "consumer_key": "some_consumer_key",
+          "consumer_key": "defaultkey",
           "consumer_secret": "theconsumerSecret",
           "access_token": "999999-accesstoken",
           "access_token_secret": "asdfsecrettoken"
         },
         {
-          "username": "notdefaultuser"
-          "consumer_key": "anotherkey",
+          "username": "A SAMPLE USER",
+          "consumer_key": "sample_user_key",
           "consumer_secret": "anothersecret",
           "access_token": "999999-accesstoken",
           "access_token_secret": "asdfsecrettoken"
         },
-
+        {
+          "username": "realSampleUser",
+          "consumer_key": "realsample",
+          "consumer_secret": "realsecret",
+          "access_token": "999999-accesstoken",
+          "access_token_secret": "asdfsecrettoken"
+        }
 ]

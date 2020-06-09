@@ -19,13 +19,14 @@ def hello(count, name):
 
 
 @click.command()
-@click.option("--srcpath", default=DEFAULT_CREDS_PATH, help='the path to your creds file')
+@click.option("--credspath", default=DEFAULT_CREDS_PATH, help='the path to your creds file')
 @click.option("--username", default='', help="The username in the creds file")
-def showcreds(srcpath, username):
+def showcreds(credspath, username):
     """Tells you where the creds are coming form"""
     _dname = f"'{username}'" if username else '<DEFAULT USERNAME>'
-    myprint(f"Pulling username [bold cyan]{_dname}[/bold cyan] creds from [bold green]{srcpath}[/bold green]")
-    creds = load_user_creds(srcpath, username)
+    myprint(f"Pulling username [bold cyan]{_dname}[/bold cyan] creds",
+            f"from [bold green]{credspath}[/bold green]")
+    creds = load_user_creds(credspath, username)
     myprint(f"{json.dumps(creds, indent=2)}")
 
 

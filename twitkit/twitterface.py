@@ -4,6 +4,8 @@ import tweepy
 
 DEFAULT_CREDS_PATH = Path('~/.twitkitrc')
 
+def _loadcreds(srcpath=DEFAULT_CREDS_PATH):
+    return json.loads(srcpath.read_text())
 
 def load_user_creds(srcpath=DEFAULT_CREDS_PATH, username=None):
     """
@@ -21,13 +23,16 @@ def load_user_creds(srcpath=DEFAULT_CREDS_PATH, username=None):
         }
     """
     srcpath = Path(srcpath).expanduser().absolute()
-    data = json.loads(srcpath.read_text())
+    rawcreds = _loadcreds(srcpath)
     if username:
-        creds = next(d for d in data if d['username'] == username.lower())
+        uname = username.lower()
+        print(uname)
+        ucreds = next(d for d in rawcreds if str(d.get('username')).lower() == uname)
     else:
-        creds = data[0]
-    return creds
+        ucreds = rawcreds[0]
+    return ucreds
 
 
 
 def auth_user(creds):
+    pass
