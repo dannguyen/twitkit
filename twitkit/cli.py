@@ -1,7 +1,6 @@
 import click
 import json
-from twitkit.twitter_client import (auth_api, DEFAULT_CREDS_PATH, load_user_creds,
-    SIMPLFIED_USER_ATTRS, SIMPLIFIED_TWEET_ATTRS)
+from twitkit.twitface import (DEFAULT_CREDS_PATH, load_user_creds, load_twitface)
 
 from twitkit.utils import myprint
 
@@ -34,37 +33,61 @@ def showcreds(credspath, username):
     for k in ('consumer_key', 'consumer_secret', 'access_token', 'access_token_secret'):
         creds[k] = creds[k][0:4] + '---REDACTED---'
 
-    myprint(f"{json.dumps(creds, indent=2)}")
-
-
-
+    myprint(creds)
 
 @click.command()
 @click.option("--credspath", default=DEFAULT_CREDS_PATH, help='the path to your creds file')
 @click.option("--username", default='', help="The username in the creds file")
 @click.option("--verbose", "-v", is_flag=True)
 def whoami(credspath, username, verbose):
-    creds = load_user_creds(credspath, username)
-    client = auth_api(creds)
-    data = client.me()._json
 
-    if verbose:
-        me = data
-    else:
-        me =  {k: v for k, v in data.items() if k in SIMPLFIED_USER_ATTRS }
-        if data.get('status'):
-            _t = data['status']
-            me['latest_tweet'] = {k: v for k, v in _t.items() if k in SIMPLIFIED_TWEET_ATTRS }
+    """Authenticates with given creds and prints out info of currently authenticated user"""
 
-
-
-    myprint(f"{json.dumps(me, indent=2)}")
+    tf = load_twitface(credspath, username)
+    data = tf.whoami(verbose)
+    myprint(data)
 
 
 cli.add_command(hello)
 cli.add_command(showcreds)
 cli.add_command(whoami)
 
+
+
+
+
+## STUB STUFF
+
+@click.command()
+@click.option("--credspath", default=DEFAULT_CREDS_PATH, help='the path to your creds file')
+@click.option("--username", default='', help="The username in the creds file")
+@click.argument('id', nargs=1, type=click.INT)
+def get_tweet(credspath, username, id):
+    """quickie stub function to get a single tweet as JSON"""
+    tf = load_twitface(credspath, username)
+    data = tf.fetch('get_status', id=id)
+    myprint(data)
+
+
+@click.command()
+@click.option("--credspath", default=DEFAULT_CREDS_PATH, help='the path to your creds file')
+@click.option("--username", default='', help="The username in the creds file")
+@click.option("--screen_name", help="The user to get favorites for; default is authenticated user")
+@click.option("--count", default=5, type=click.INT, help="number of favorites to get (200 is max)")
+def get_favorites(credspath, username, screen_name, count):
+    """quickie stub function to get a list of favorites as JSON"""
+    tf = load_twitface(credspath, username)
+    if screen_name:
+        data = tf.fetch('favorites', screen_name=screen_name, count=count)
+    else:
+        data = tf.fetch('favorites', count=count)
+    myprint(data)
+
+
+cli.add_command(get_tweet)
+cli.add_command(get_favorites)
+
+### END STUBS
 
 if __name__ == '__main__':
     cli()

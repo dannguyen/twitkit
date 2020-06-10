@@ -17,6 +17,11 @@ To use the CLI:
 
     poetry run cli
 
+To check if you're properly authenticated as a user:
+
+.. code-block:: bash
+
+    poetry run cli whoami
 
 
 Tweepy stuff

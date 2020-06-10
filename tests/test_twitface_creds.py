@@ -1,8 +1,8 @@
 from pathlib import Path
 
-from twitkit.twitter_client import DEFAULT_CREDS_PATH, load_user_creds, _loadcreds
+from twitkit.twitface import DEFAULT_CREDS_PATH, load_user_creds, _loadcreds
 
-LOCAL_SAMPLE_PATH = Path('./sample.twitkitrc')
+LOCAL_SAMPLE_PATH = Path('./samples/sample.twitkitrc')
 SAMPLE_USERNAME = 'A SAMPLE USER'
 
 def test_default_creds_path():
@@ -19,11 +19,11 @@ def test_sample_data():
     assert data[1].get('consumer_key') == 'sample_user_key'
 
 def test_default_user_selection():
-    ucreds = load_user_creds(srcpath=LOCAL_SAMPLE_PATH)
+    ucreds = load_user_creds(credspath=LOCAL_SAMPLE_PATH)
     assert ucreds['consumer_key'] == 'defaultkey'
     assert ucreds.get('username') is None
 
 def test_load_by_username():
-    ucreds = load_user_creds(srcpath=LOCAL_SAMPLE_PATH, username=SAMPLE_USERNAME)
+    ucreds = load_user_creds(credspath=LOCAL_SAMPLE_PATH, username=SAMPLE_USERNAME)
     assert ucreds['username'] == SAMPLE_USERNAME
     assert ucreds['consumer_key'] == 'sample_user_key'

@@ -1,0 +1,101 @@
+{
+  "created_at": "Wed Jun 10 03:47:16 +0000 2020",
+  "id": 1270563152892235777,
+  "id_str": "1270563152892235777",
+  "text": "@WhiteHouse test reply hello",
+  "truncated": false,
+  "entities": {
+    "hashtags": [],
+    "symbols": [],
+    "user_mentions": [
+      {
+        "screen_name": "WhiteHouse",
+        "name": "The White House",
+        "id": 822215673812119553,
+        "id_str": "822215673812119553",
+        "indices": [
+          0,
+          11
+        ]
+      }
+    ],
+    "urls": []
+  },
+  "source": "<a href=\"https://mobile.twitter.com\" rel=\"nofollow\">Twitter Web App</a>",
+  "in_reply_to_status_id": 1268910949475459076,
+  "in_reply_to_status_id_str": "1268910949475459076",
+  "in_reply_to_user_id": 822215673812119553,
+  "in_reply_to_user_id_str": "822215673812119553",
+  "in_reply_to_screen_name": "WhiteHouse",
+  "user": {
+    "id": 14335332,
+    "id_str": "14335332",
+    "name": "Dan Nguyen",
+    "screen_name": "dancow",
+    "location": "Chicago",
+    "description": "Proud son of war refugees, computational journalist. he/him Past: taught @stanford; newsdeved @ProPublica @Skift @sacbee_news RTs could mean \ud83e\udd74 or \ud83d\ude2c or \ud83e\udd14",
+    "url": "https://t.co/rfQwd0LVZb",
+    "entities": {
+      "url": {
+        "urls": [
+          {
+            "url": "https://t.co/rfQwd0LVZb",
+            "expanded_url": "http://danwin.com",
+            "display_url": "danwin.com",
+            "indices": [
+              0,
+              23
+            ]
+          }
+        ]
+      },
+      "description": {
+        "urls": []
+      }
+    },
+    "protected": false,
+    "followers_count": 10,
+    "friends_count": 20,
+    "listed_count": 30,
+    "created_at": "Tue Apr 08 19:39:54 +0000 2008",
+    "favourites_count": 85961,
+    "utc_offset": null,
+    "time_zone": null,
+    "geo_enabled": true,
+    "verified": true,
+    "statuses_count": 100,
+    "lang": null,
+    "contributors_enabled": false,
+    "is_translator": false,
+    "is_translation_enabled": false,
+    "profile_background_color": "EDECE9",
+    "profile_background_image_url": "http://abs.twimg.com/images/themes/theme3/bg.gif",
+    "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme3/bg.gif",
+    "profile_background_tile": false,
+    "profile_image_url": "http://pbs.twimg.com/profile_images/1265678794314207233/SZ1_XlaH_normal.jpg",
+    "profile_image_url_https": "https://pbs.twimg.com/profile_images/1265678794314207233/SZ1_XlaH_normal.jpg",
+    "profile_banner_url": "https://pbs.twimg.com/profile_banners/14335332/1533193318",
+    "profile_link_color": "981CEB",
+    "profile_sidebar_border_color": "FFFFFF",
+    "profile_sidebar_fill_color": "EFEFEF",
+    "profile_text_color": "333333",
+    "profile_use_background_image": true,
+    "has_extended_profile": true,
+    "default_profile": false,
+    "default_profile_image": false,
+    "following": false,
+    "follow_request_sent": false,
+    "notifications": false,
+    "translator_type": "regular"
+  },
+  "geo": null,
+  "coordinates": null,
+  "place": null,
+  "contributors": null,
+  "is_quote_status": false,
+  "retweet_count": 0,
+  "favorite_count": 0,
+  "favorited": false,
+  "retweeted": false,
+  "lang": "en"
+}
