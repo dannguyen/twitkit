@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from twitkit.twitterface import DEFAULT_CREDS_PATH, load_user_creds, _loadcreds
+from twitkit.twitter_client import DEFAULT_CREDS_PATH, load_user_creds, _loadcreds
 
 LOCAL_SAMPLE_PATH = Path('./sample.twitkitrc')
 SAMPLE_USERNAME = 'A SAMPLE USER'
